@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerador senha</title>
+</head>
+<body>
+    <div class="inputBox">
+        <h2>Gerar senha</h2>
+        <input type="text" name="" placeholder="Password" id="password" readonly="">
+        <div id="btn" onclick="getpassword();">Gerar Senha</div>
+    </div>
+    <script>
+            
+
+        function getpassword(){
+
+            var chars = "0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWXTZ*@";
+            var passwordLenght = 8;
+            var password = "";
+
+            for(var i=0; i<passwordLenght; i++){
+                var randomNumber = Math.floor(Math.random() * chars.length);
+                password += chars.substring(randomNumber,randomNumber+1);
+            }
+            document.getElementById("password").value = password
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_quiz.css">
+    <title>quiz</title>
+</head>
+<body>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div class="question">Exercicio 01</div>
+            <div id="answer-buttons" class="btn-grid" id="ex_01">
+
+                <label class="option">
+                    <input type="radio" class="radioBtn" name="option" value="1">
+                    <span id="opt1">01 fsfdfafdafdfsf</span>
+                </label>
+        
+                <label class="option">
+                    <input type="radio" class="radioBtn" name="option" value="2">
+                    <span id="opt2">02 fsfdsfsdfsdfsdf</span>
+                </label>
+        
+        
+                <div class="col-md-4 py-3">
+                    <div class="alternativa mx-1">
+                        <div class="questao"><span>C</span></div>
+                        <div class="campo-box">
+                            <div class="campo">
+                                <label for="option">
+                                    <input type="radio" class="radioBtn" id="option" name="option" value="3">
+                                    <p>
+                                        O investimento em marcas próprias é uma forma de o Grupo DPSP estar presente em todas as lojas do varejo farmacêutico, com produtos que têm a mesma qualidade das grandes marcas, mas com um preço bem competitivo
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 py-3">
+                    <div class="alternativa mx-1">
+                        <div class="questao"><span>C</span></div>
+                        <div class="campo-box">
+                            <div class="campo">
+                                <input type="radio" class="radioBtn" id="a3" name="option" value="3">
+                            </div>
+                        </div>
+                        <label for="a3" class="alternativaTexto">
+                            O investimento em marcas próprias é uma forma de o Grupo DPSP estar presente em todas as lojas do varejo farmacêutico, com produtos que têm a mesma qualidade das grandes marcas, mas com um preço bem competitivo
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Confirmar</button>
+            <button id="feed-btn" class="feed-btn btn">Rever feedback</button>
+        </div>
+    </div>
+
+
+<script>
+
+    // inicio Json Exercicio 
+    data = '[{ "exercicio":"ex_01","resposta":"1"}]';
+
+    var mydata = JSON.parse(data);
+    //console.log( mydata[0].resposta)
+    const resp = mydata[0].resposta;
+
+    const select = (e) => document.querySelector(e);
+        
+    // MOSTRAR O BTNCOMFIRMAR
+    var radioBtns = document.getElementsByClassName("radioBtn");
+
+    for(var i = 0; i < radioBtns.length; i++){
+        radioBtns[i].addEventListener("click", function(e){
+            if(radioBtns != 0){
+                btnComfirmar.style.display = 'block';
+            }
+        })
+    }
+
+    // VERIFICAR O INPUT RADIO SELECIONADO
+    function verificar() {
+
+        let radiosElements = document.querySelectorAll('input[type=radio]');
+        
+
+        radiosElements.forEach(radio => {
+            if (radio.checked) {
+                //console.log ( 'A resposta marcada: ', radio.value + ' resposta correta ' + resp )
+                if (radio.checked && radio.value == resp) {
+                    btnComfirmar.style.display = 'none';
+                    btnFeedBack.style.display = 'block';
+                    alert("Resposta correta");
+                } else {
+                    alert("Resposta errada");
+                }
+            }
+        })
+
+    }
+
+    //PEGA O BUTTON COMFIRMAR
+    var btnComfirmar = select('.start-btn');
+    btnComfirmar.addEventListener('click', ()=>{
+        verificar();
+    });
+
+    //PEGA O BUTTON FEEDBACK
+    var btnFeedBack = select('.feed-btn');
+    btnFeedBack.addEventListener('click', ()=>{
+        verificar();
+    });
+
+
+    </script>
+
+
+    <script src="script_locadora.js"></script>
+</body>
+</html>

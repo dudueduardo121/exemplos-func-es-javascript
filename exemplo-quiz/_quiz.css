@@ -1,0 +1,77 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background: aquamarine;
+    height: 100vh;
+}
+
+.container{
+    width: 800px;
+    max-width: 80%;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid{
+    display: grid;
+    grid-template-columns:  repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+.start-btn{
+    display: none;
+}
+
+.feed-btn{
+    display: none;
+}
+
+.btn{
+    background: cornflowerblue;
+    border: 1px solid ;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover{
+    border-color: black;
+}
+
+.btn.correct{
+
+    background: darkgreen;
+}
+.btn.errada{
+    background: crimson;
+}
+
+.start-btn, .feed-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.
+
+
+
+
